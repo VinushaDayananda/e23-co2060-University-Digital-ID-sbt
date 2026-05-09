@@ -1,57 +1,170 @@
-___
-# DELETE THIS INSTRUCTIONS AND ADD AN INTRODUCTION ABOUT YOUR PROJECT
-___
+# Digital Student ID Using Soulbound Tokens
 
-# eYY-co2060-project-template
+## Powered by Blockchain
 
-This is a sample repository you can use for your Software Systems Design Project. Once you followed these instructions, remove the text and add a brief introduction to here.
+## Introduction
 
-### Enable GitHub Pages
+This project presents a blockchain-based digital student identity system using Soulbound Tokens (SBTs) as a secure and non-transferable alternative to traditional physical student ID cards. The system is designed to address common issues associated with physical identification methods, such as loss, theft, duplication, and time-consuming manual verification processes.
 
-You can put the things to be shown in GitHub pages into the _docs/_ folder. Both html and md file formats are supported. You need to go to settings and enable GitHub pages and select _main_ branch and _docs_ folder from the dropdowns, as shown in the below image.
+The proposed solution utilizes blockchain technology to create decentralized digital identities for students. Each student is issued a unique Soulbound Token that is permanently linked to their blockchain wallet and cannot be transferred to another user. This ensures that the digital identity remains secure, tamper-resistant, and verifiable.
 
-![image](https://user-images.githubusercontent.com/11540782/98789936-028d3600-2429-11eb-84be-aaba665fdc75.png)
+The system consists of three main layers: a blockchain layer that manages token ownership and revocation through smart contracts, a backend server that communicates with the blockchain and handles verification logic, and a web-based frontend that allows students and administrators to interact with the system. Students can connect their wallets, view their digital student IDs, and generate QR codes for identity verification, while administrators can issue and revoke tokens when necessary.
 
-### Special Configurations
+This project aims to demonstrate the feasibility of replacing traditional university ID cards with blockchain-based digital identities using Soulbound Tokens.
 
-These projects will be automatically added into [https://projects.ce.pdn.ac.lk](). If you like to show more details about your project on this site, you can fill the parameters in the file, _/docs/index.json_
+---
 
-```
-{
-  "title": "This is the title of the project",
-  "team": [
-    {
-      "name": "Team Member Name 1",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 2",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 3",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    }
-  ],
-  "supervisors": [
-    {
-      "name": "Dr. Supervisor 1",
-      "email": "email@eng.pdn.ac.lk"
-    },
-    {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
-    }
-  ],
-  "tags": ["Web", "Software Systems", "CO2060"]
-}
-```
+## Features
 
-Once you filled this _index.json_ file, please verify the syntax is correct. (You can use [this](https://jsonlint.com/) tool).
+- Blockchain-based digital student identity
+- Soulbound Token (non-transferable NFT) implementation
+- Student wallet integration using MetaMask
+- QR-based identity verification
+- Token issuance and revocation system
+- Web-based student and administrator interfaces
+- Tamper-resistant identity verification
 
-### Page Theme
+---
 
-A custom theme integrated with this GitHub Page, which is based on [github.com/cepdnaclk/eYY-project-theme](https://github.com/cepdnaclk/eYY-project-theme). If you like to remove this default theme, you can remove the file, _docs/\_config.yml_ and use HTML based website.
+## System Architecture
+
+The system consists of three main components:
+
+### 1. Frontend Layer
+- Student dashboard
+- Administrator dashboard
+- QR code generation and display
+- Wallet connection using MetaMask
+
+### 2. Backend Layer
+- API services
+- Blockchain communication
+- Token verification logic
+- Request handling
+
+### 3. Blockchain Layer
+- Smart contract deployment
+- Token ownership management
+- Non-transferable token enforcement
+- Revocation mechanism
+
+---
+
+## Technologies Used
+
+### Blockchain
+- Ethereum / Polygon Test Network
+
+### Smart Contract
+- Solidity
+- OpenZeppelin Contracts
+
+### Backend
+- Node.js
+- Express.js
+- Ethers.js
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
+
+### Wallet
+- MetaMask
+
+---
+
+## Core Functionalities
+
+- Connect student wallet
+- Issue Soulbound Tokens
+- Verify student identity
+- Revoke tokens
+- Generate QR codes
+- Validate token ownership
+
+---
+
+## Project Structure
+
+```plaintext
+university-digital-id-sbt/
+│
+├── README.md
+├── .gitignore
+├── LICENSE
+│
+├── docs/
+│   ├── architecture.md
+│   ├── api_design.md
+│   ├── smart_contract_design.md
+│
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   ├── wallet.js
+│   │   ├── student_dashboard.js
+│   │   ├── admin_dashboard.js
+│   │   ├── qr_generator.js
+│   │   └── api.js
+│   │
+│   ├── pages/
+│   │   ├── student_dashboard.html
+│   │   ├── request_token.html
+│   │   ├── verify_identity.html
+│   │   ├── admin_dashboard.html
+│   │   └── wallet_recovery.html
+│
+│   └── assets/
+│       ├── images/
+│       └── icons/
+│
+├── backend/
+│   ├── app.py
+│   ├── config.py
+│   ├── requirements.txt
+│   │
+│   ├── database/
+│   │   ├── db.py
+│   │   └── schema.sql
+│   │
+│   ├── models/
+│   │   ├── student_model.py
+│   │   ├── token_model.py
+│   │   ├── request_model.py
+│   │   └── wallet_change_model.py
+│   │
+│   ├── routes/
+│   │   ├── token_routes.py
+│   │   ├── verification_routes.py
+│   │   ├── admin_routes.py
+│   │   └── student_routes.py
+│   │
+│   ├── services/
+│   │   ├── blockchain_service.py
+│   │   └── qr_service.py
+│   │
+│   └── utils/
+│       ├── helpers.py
+│       └── validators.py
+│
+├── blockchain/
+│   ├── contracts/
+│   │   └── StudentIdentitySBT.sol
+│   │
+│   ├── scripts/
+│   │   ├── deploy.js
+│   │   └── interact.js
+│   │
+│   ├── test/
+│   │   └── contract_test.js
+│   │
+│   ├── hardhat.config.js
+│   └── package.json
+│
+└── diagrams/
+    ├── system_architecture.png
+    ├── data_flow.png
+    └── smart_contract_flow.png
